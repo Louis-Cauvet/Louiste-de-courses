@@ -1,15 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/src/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/src/favicon/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>Louiste de courses - Produits disponibles</title>
 </head>
 
 <body>
-  <div id="app"></div>
+  <header>
+    <nav>
+      <p class="tagline">🛒Louiste de courses</p>
+      <a href="/liste.html" class="nav-link">Liste de courses</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="main-top">
+      <div class="left-part">
+        <h1 class="a-title-1">Produits disponibles</h1>
+        <p id="compteur-produits" class="counter">98 produits</span>
+      </div>
+      <div class="right-part">
+        <label for="recherche" class="sr-only">Rechercher un produit</label>
+        <input type="text" id="recherche" name="search-product" placeholder="Rechercher un produit">
+        <label for="tri" class="sr-only">Filtrer par </label>
+        <select id="tri" name="filter-product">
+          <option value="default">Trier par</option>
+          <option value="nom">Nom</option>
+          <option value="prix">Prix</option>
+        </select>
+        <button id="reset-filtres" class="a-button">Réinitialiser</button>
+      </div>
+    </div>
+
+    <ul id="liste-produits" class="product-list">
+      <!--- Insertion dynamique des cartes via JS -->
+    </ul>
+  </main>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 

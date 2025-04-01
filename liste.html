@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/favicon/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Louiste de courses - Liste de courses</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p class="tagline">🛒Louiste de courses</p>
+            <a href="/index.html" class="nav-link">Produits disponibles</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="a-title-1">📝Ma liste de course</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>PU (€)</th>
+                    <th>Quantité</th>
+                    <th>Sous-total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="liste-course-body">
+                <!--- Insertion dynamique des produits via JS -->
+            </tbody>
+        </table>
+
+        <div class="footer-list">
+            <p>💰Total général : <span id="total-general">65.30 €</span></p>
+            <button id="vider-liste" class="a-button">Vider la liste</button>
+        </div>
+        </section>
+
+        <script type="module" src="/src/liste.js"></script>
+</body>
+
+</html>
