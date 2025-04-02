@@ -2,15 +2,15 @@
 
 import "./sass/style.scss";
 
- // Global array to store the list of products once loaded
+// Global array to store the list of products once loaded
 let $listProducts = [];     
 
 /*****************************************
  ** Allows to fetch & store products' data form JSON file into an array
  *****************************************/
 function createProductsArray() {
+  // Getting the products' list from JSON file
   return fetch('/liste_produits_quotidien.json')
-   // Getting the products' list from JSON file
   .then(response => response.json())
   .then(data => {
    // Transforming each product and storing it in the global array with a unique ID
