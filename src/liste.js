@@ -9,7 +9,9 @@ let $shoppingListProducts = [];
 /*****************************************
  ** Allows to retrieves the shopping list's products from Local Storage
  *****************************************/
-function gettingListProducts() {
+
+// utiliser pour les test de gettingListProducts
+export function gettingListProducts() {
      // Getting the products' list from shopping list (in Local Storage)
     $shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
@@ -28,10 +30,17 @@ function gettingListProducts() {
     .catch(err => console.error('Erreur dans le chargement du fichier JSON de la liste de produits :', err));
 }
 
+// utiliser pour les test de gettingListProducts
+export function getShoppingListProducts() {
+    return $shoppingListProducts; // Getter pour obtenir les produits
+}
+
 /*****************************************
  ** Allows to display all shopping list's products into the table
 *****************************************/
-function displayProductsTable() {
+export function displayProductsTable($shoppingList, $shoppingListProducts) { 
+// En dehors du test, mettre 
+// function displayProductsTable() { 
     // Getting and clearing the table container
     const $tableBody = document.querySelector('#liste-course-body');
     $tableBody.innerHTML = '';
@@ -72,7 +81,7 @@ function displayProductsTable() {
 /*****************************************
  ** Allows to delete a product from shopping list based on his id
 *****************************************/
-function deleteProduct($productId) {
+export function deleteProduct($productId) {
     // Removing the product corresponding to the id in parameters from shopping list
     $shoppingList = $shoppingList.filter($item => $item.id !== $productId);
 
@@ -80,13 +89,16 @@ function deleteProduct($productId) {
     localStorage.setItem('shoppingList', JSON.stringify($shoppingList));
 
     // Updating the table's rows
-    displayProductsTable();
+    displayProductsTable($shoppingList, $shoppingListProducts)
+    // En dehors du test, mettre :
+    // displayProductsTable();
+
 }
 
 /*****************************************
  ** Allows to modify a product's quantity thanks to the quantity's input 
 *****************************************/
-function updateProductQuantity($productId, $newProductQuantity) {
+export function updateProductQuantity($productId, $newProductQuantity) {
     // Verifying than the product is on the shopping list 
     const $item = $shoppingList.find(p => p.id === $productId);
     const $product = $shoppingListProducts.find(p => p.id === $productId);

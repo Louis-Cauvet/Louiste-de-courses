@@ -49,7 +49,7 @@ export function addingProductToShoppingList($productId) {
 /*****************************************
  ** Allows to dynamically display products' card from the array passed in parameters
  *****************************************/
-function displayProductCards($productsToDisplay) {
+export function displayProductCards($productsToDisplay) {
   // Getting & clearing the container on which we dynamically insert the products' list passed in parameters
   const $productsListContainer = document.querySelector('#liste-produits');
   $productsListContainer.innerHTML = '';
@@ -113,7 +113,7 @@ function displayProductCards($productsToDisplay) {
 /*****************************************
  ** Allows to filter products based on the search input & the sort value
  *****************************************/
-function filterProducts() {
+export function filterProducts() {
   const $searchValue = document.querySelector('#recherche').value.toLowerCase();
   const $sortValue = document.querySelector('#tri').value;
 
@@ -138,7 +138,7 @@ function filterProducts() {
 /*****************************************
  ** Allows to reset filters 
  *****************************************/
-function resetfilters() {
+export function resetfilters() {
   // Passing the default values of filters' fields
   document.querySelector('#recherche').value = '';
   document.querySelector('#tri').value = 'default';
