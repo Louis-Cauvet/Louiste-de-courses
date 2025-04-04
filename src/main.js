@@ -8,7 +8,7 @@ let $listProducts = [];
 /*****************************************
  ** Allows to fetch & store products' data form JSON file into an array
  *****************************************/
-function createProductsArray() {
+export function createProductsArray() {
   // Getting the products' list from JSON file
   return fetch('/liste_produits_quotidien.json')
   .then(response => response.json())
@@ -27,7 +27,7 @@ function createProductsArray() {
 /*****************************************
  ** Allows to store the shopping list's products in Local Storage
 *****************************************/
-function addingProductToShoppingList($productId) {
+export function addingProductToShoppingList($productId) {
   // Getting the shopping list stored in Local Storage
   let $shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
